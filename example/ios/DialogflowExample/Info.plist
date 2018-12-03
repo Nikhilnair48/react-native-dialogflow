@@ -2,6 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>949703092805-4lcmh5usr8k7udvclsf5dokni767f8vv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.949703092805-4lcmh5usr8k7udvclsf5dokni767f8vv</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>App.ios.js</string>
+	
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Your usage description here</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Your usage description here</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

@@ -85,7 +85,7 @@ export class Dialogflow_V2 {
 
         this.contexts = null;
         this.entities = null;
-
+        alert(DEFAULT_BASE_URL + this.projectId + "/agent/sessions/" + this.sessionId + ":detectIntent");
         fetch(DEFAULT_BASE_URL + this.projectId + "/agent/sessions/" + this.sessionId + ":detectIntent", {
             method: "POST",
             headers: {
