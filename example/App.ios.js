@@ -17,7 +17,6 @@ export default class App extends Component {
       listening2: false
     };
 
-
     Dialogflow_V2.setConfiguration(
       "SERVICE ACCOUNT YOU CREATED IN DIALOGFLOW",
       "PRIVATE KEY ASSOCIATED WITH THE SERVICE ACCOUNT",
@@ -32,22 +31,25 @@ export default class App extends Component {
     //   'laura-63528'
     // );
 
-    const contexts = [{
-      "name": "deals",
-      "lifespan": 1,
-      "parameters": {
-        "name": "Sam"
-      }
-    }];
+    // const contexts = [{
+    //   "name": "deals",
+    //   "lifespan": 1,
+    //   "parameters": {
+    //     "name": "Sam"
+    //   }
+    // }];
 
 
-    //Dialogflow.setContexts(contexts);
-    Dialogflow_V2.setContexts(contexts);
+    // Dialogflow_V2.setContexts(contexts);
 
 
+    // const permanentContexts = [{
+    //   "name": "config",
+    //   "parameters": {
+    //     "access_token": "ya29.GltnBrNaIdTKjzhV0YGyMkFK7UX-Kp3n9BXTPbTw2zsRy_wBhXxeq-C1H0qPd6nUtwnO0688_FAWnoGyDc2-ac6nL8M0Dawyhg9jxev1YTLhYoOek_uzscfGEej6"
+    //   }
+    // }];
 
-
-    // Dialogflow.setPermanentContexts(permanentContexts);
     // Dialogflow_V2.setPermanentContexts(permanentContexts);
 
 
@@ -63,16 +65,12 @@ export default class App extends Component {
         }
       ]
     }];
-
-
-    //Dialogflow.setEntities(entities);
-    //Dialogflow_V2.setEntities(entities);
+    // FUNCTION DOESN'T EXIST.
+    // Dialogflow_V2.setEntities(entities);
   }
 
 
   render() {
-    //{ this.setState(result = JSON.stringify(r)) } 
-    //Dialogflow.requestEvent("WELCOME", null, r => { console.log(r)} , e => console.log(e));
     Dialogflow_V2.requestEvent("WELCOME", null, r => alert(JSON.stringify(r)), e => alert(JSON.stringify(e)));
 
 
@@ -85,37 +83,9 @@ export default class App extends Component {
           <Text>{"Result: " + this.state.result}</Text>
         </View>
         <View style={{ flex: 1, padding: 10 }}>
-          <Button title={this.state.buttonText1} onPress={() => {
+          
 
-
-            if (this.state.listening1) {
-              Dialogflow.finishListening();
-              this.setState({ buttonText1: "Start Listening", listening1: false })
-            } else {
-              Dialogflow.startListening(result => {
-                this.setState({ result: JSON.stringify(result) });
-              }, error => {
-                this.setState({ result: JSON.stringify(error) });
-              });
-              this.setState({ buttonText1: "Stop Listening", listening1: true })
-            }
-
-            // V1
-            Dialogflow.onListeningStarted(() => {
-              this.setState({ listeningState: "started" });
-            });
-
-            Dialogflow.onListeningCanceled(() => {
-              this.setState({ listeningState: "canceled" });
-            });
-
-            Dialogflow.onListeningFinished(() => {
-              this.setState({ listeningState: "finished" });
-            });
-
-          }} />
-
-          {/* <Button color="orange" title={this.state.buttonText2} onPress={() => {
+          <Button color="orange" title={this.state.buttonText2} onPress={() => {
             // V2 
             if (this.state.listening2) {
               Dialogflow_V2.finishListening();
@@ -141,7 +111,7 @@ export default class App extends Component {
               this.setState({ listeningState: "finished" });
             });
 
-          }} /> */}
+          }} />
         </View>
       </View>
     );

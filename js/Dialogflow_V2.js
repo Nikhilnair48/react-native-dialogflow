@@ -131,6 +131,8 @@ export class Dialogflow_V2 {
         })
             .then(function (response) {
                 var json = response.json().then(onResult)
+                console.log("requestQuery::response");
+                console.log(json);
             })
             .catch(onError);
     };
